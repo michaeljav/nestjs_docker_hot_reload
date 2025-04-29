@@ -1,0 +1,9 @@
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {
+//     "watchOptions": {
+//       "watchFile": "usePolling",
+//       "pollingInterval": 300
+//     }
+//   }
+// }

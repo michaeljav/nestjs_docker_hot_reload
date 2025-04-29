@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nest-app:
+    build: .
+    ports:
+      - '3000:3000'
+    command: pnpm run start:dev
+    environment:
+      - NODE_ENV=development
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /app
+        - action: sync
+          path: ./package.json
+          target: /app/package.json
+        - action: sync
+          path: ./tsconfig.json
+          target: /app/tsconfig.json
+        - action: rebuild
+          path: ./pnpm-lock.yaml
